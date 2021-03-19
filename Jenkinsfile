@@ -37,10 +37,10 @@ node {
 			// need to pull out assigned username
 			if (isUnix()) {
 				println 'unix'
-				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -w 10 -d manifest/. -u ${HUB_ORG}"
+				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy --wait=10 -d manifest/. -u ${HUB_ORG}"
 			}else{
 				println 'not unix'
-			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy -w 10 -d manifest/. -u ${HUB_ORG}"
+			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:deploy --wait=10 -d manifest/. -u ${HUB_ORG}"
 			}
 			  
             printf rmsg
